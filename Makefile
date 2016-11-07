@@ -6,7 +6,7 @@
 #    By: abonneca <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 09:59:58 by abonneca          #+#    #+#              #
-#    Updated: 2016/11/07 20:15:16 by abonneca         ###   ########.fr        #
+#    Updated: 2016/11/07 20:43:43 by abonneca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC_POS = $(addprefix $(SRC_PATH),$(SRC))
 
 $(NAME):
 	gcc -c $(FLAGS) $(SRC_POS) -I includes
-	gcc  $(OBJ) -I includes -o $(NAME)
+	gcc  $(OBJ) -I includes -o $(NAME) libft.a
 
 all: $(NAME)
 

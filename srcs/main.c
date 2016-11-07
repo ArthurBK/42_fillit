@@ -5,13 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 20:14:23 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/07 20:14:46 by abonneca         ###   ########.fr       */
+/*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
+/*   Updated: 2016/11/07 20:45:04 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int ac, char **ar)
-{
+#include "libft.h"
 
-	return(0);
+int	main(void)
+{
+		ft_putstr("ok");
+		return(0);
 }
