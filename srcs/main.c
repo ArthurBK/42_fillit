@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/07 20:49:46 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/07 20:50:43 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int	main(int ac, char **ar)
 		//ecrire sur la sortie d'erreur 2?
 		ft_putstr("usgae: ./fillit target_file");
 	}
+
 		return(0);
 }
