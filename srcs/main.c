@@ -6,14 +6,22 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/07 20:45:04 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/07 20:49:46 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	main(void)
+int	main(int ac, char **ar)
 {
-		ft_putstr("ok");
+	if (ac == 2)
+	{
+		ft_putstr(ar[1]);
+	}
+	else
+	{
+		//ecrire sur la sortie d'erreur 2?
+		ft_putstr("usgae: ./fillit target_file");
+	}
 		return(0);
 }
