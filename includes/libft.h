@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:23:33 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/08 17:37:50 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/08 18:46:13 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
@@ -91,5 +92,6 @@ char				*ft_strrev(char *str);
 void				ft_sort_int_tab(int *tab, unsigned int size);
 int					ft_pgcd(int a, int b);
 int					ft_list_size(t_list *begin_list);
+int					ft_check_main(char *str);
 
 #endif
