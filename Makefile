@@ -6,7 +6,7 @@
 #    By: abonneca <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 09:59:58 by abonneca          #+#    #+#              #
-#    Updated: 2016/11/08 12:54:21 by gepicard         ###   ########.fr        #
+#    Updated: 2016/11/08 17:28:19 by gepicard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ FLAGS=-Wall -Wextra -Werror
 NAME=fillit
 
 SRC=	main.c\
+		ft_check.c\
 
 OBJ=$(SRC:.c=.o)
 

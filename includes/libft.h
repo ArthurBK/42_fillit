@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:23:33 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/08 12:53:22 by gepicard         ###   ########.fr       */
+/*   Updated: 2016/11/08 17:27:49 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ char				*ft_strrev(char *str);
 void				ft_sort_int_tab(int *tab, unsigned int size);
 int					ft_pgcd(int a, int b);
 int					ft_list_size(t_list *begin_list);
+int					ft_check_main(char *str);
 
 #endif

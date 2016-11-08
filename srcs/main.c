@@ -6,35 +6,18 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/08 14:44:11 by gepicard         ###   ########.fr       */
+/*   Updated: 2016/11/08 18:41:02 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void	ft_check(int fd)
-{
-}
-
-
-void	ft_read_file(int fd)
-{
-	int		ret;
-	char	buf[2];
-
-	while ((ret = read(fd, buf, 1)))
-	{
-		buf[1] = '\0';
-		ft_putchar(buf[0]);
-	}
-}
-
 int		ft_lenfd(int fd)
 {
-	int		ret;
-	int		i;
-	char	buf[2];
+	int     ret;
+	int     i;
+	char    buf[2];
 
 	i = 0;
 	while ((ret = read(fd, buf, 1)))
@@ -45,6 +28,21 @@ int		ft_lenfd(int fd)
 	return (i);
 }
 
+char	*ft_string_to_fd(char *dst, int fd)
+{
+	int     ret;
+	char    buf[2];
+	int		i;
+
+	i = 0;
+	while ((ret = read(fd, buf, 1)))
+	{
+		buf[1] = '\0';
+		dst[i] = buf[0];
+		i++;
+	}
+	return (dst);
+}
 
 int	main(int ac, char **ar)
 {
@@ -68,9 +66,10 @@ int	main(int ac, char **ar)
 			return (1);
 		}
 		fd = open(ar[1], O_RDWR);
-		dst = malloc(sizeof(char) * len + 1);
-		printf("%d\n", len);
-		ft_read_file(fd);
+		if (!(dst = malloc(sizeof(char) * len + 1)))
+			return (1);
+		dst = ft_string_to_fd(dst, fd);
+		printf("%d\n", ft_check_main(dst));
 	}
 	else
 	{
