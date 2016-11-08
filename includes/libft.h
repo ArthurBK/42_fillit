@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/05 16:23:33 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/07 13:36:06 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/08 12:53:22 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 typedef struct		s_list
 {
