@@ -6,11 +6,12 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/08 20:15:44 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/09 09:45:05 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../includes/fillit.h"
 #include <stdio.h>
 
 int		ft_lenfd(int fd)
@@ -69,7 +70,8 @@ int	main(int ac, char **ar)
 		if (!(dst = malloc(sizeof(char) * len + 1)))
 			return (1);
 		dst = ft_string_to_fd(dst, fd);
-		printf("%d\n", ft_check_main(dst));
+		ft_check_main(dst);
+		ft_check_pattern(dst);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 #    By: abonneca <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 09:59:58 by abonneca          #+#    #+#              #
-#    Updated: 2016/11/08 17:28:19 by gepicard         ###   ########.fr        #
+#    Updated: 2016/11/09 09:32:24 by abonneca         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ NAME=fillit
 
 SRC=	main.c\
 		ft_check.c\
+		ft_pattern.c\
 
 OBJ=$(SRC:.c=.o)
 
