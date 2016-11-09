@@ -6,11 +6,12 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 14:18:50 by gepicard         ###   ########.fr       */
+/*   Updated: 2016/11/09 16:36:56 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../includes/fillit.h"
 #include <stdio.h>
 
 int		ft_lenfd(int fd)
@@ -41,7 +42,7 @@ char	*ft_string_to_fd(char *dst, int fd)
 		dst[i] = buf[0];
 		i++;
 	}
-	dst[i] = '\0';
+	dst[i] = 0;
 	return (dst);
 }
 
@@ -85,6 +86,8 @@ int	main(int ac, char **ar)
 		dst = ft_string_to_fd(dst, fd);
 		tab = ft_strsplit(dst, '\n');
 		ft_print_tab(tab);
+		ft_check_main(dst);
+		printf("%i\n", ft_check_pattern(dst));
 	}
 	else
 	{
