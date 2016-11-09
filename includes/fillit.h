@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 17:38:40 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 16:38:26 by gepicard         ###   ########.fr       */
+/*   Updated: 2016/11/09 19:07:52 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,25 +19,21 @@
 
 typedef	struct	s_coordxy
 {
-	int	x;
-	int	y;
+	int					x;
+	int					y;
+	struct s_coordxy	*next;
 }				t_coordxy;
 
-typedef	struct	s_coord
-{
-	t_coordxy	coord_1;
-	t_coordxy	coord_2;
-	t_coordxy	coord_3;
-	t_coordxy	coord_4;
-}				t_coord;
 
 typedef struct	s_piece
 {
-	struct s_coord	*coord;
-	struct s_piece	*next;
+	struct s_coordxy	*coord;
+	int					number;
+	struct s_piece		*next;
 }				t_piece;
 
 int		ft_check_main(char *str);
 int		ft_check_pattern(char *str);
+t_piece         **ft_piece_to_coord(char **tab);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 16:36:56 by gepicard         ###   ########.fr       */
+/*   Updated: 2016/11/09 19:02:59 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int	main(int ac, char **ar)
 		ft_print_tab(tab);
 		ft_check_main(dst);
 		printf("%i\n", ft_check_pattern(dst));
+		ft_piece_to_coord(tab);
 	}
 	else
 	{
