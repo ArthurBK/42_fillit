@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 13:27:09 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/09 13:59:02 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char	*ft_string_to_fd(char *dst, int fd)
 		dst[i] = buf[0];
 		i++;
 	}
+	dst[i] = 0;
 	return (dst);
 }
 
