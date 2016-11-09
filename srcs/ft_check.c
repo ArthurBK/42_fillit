@@ -6,7 +6,7 @@
 /*   By: gepicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 09:23:56 by gepicard          #+#    #+#             */
-/*   Updated: 2016/11/09 08:41:59 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/09 14:37:40 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static int		ft_mult_5(int i)
 {
+	if (i == 1)
+		return (0);
 	if (i / 5 * 5 == i)
 		return (1);
 	return (0);
@@ -22,20 +24,34 @@ static int		ft_mult_5(int i)
 static int		ft_check_back_line(char *str)
 {
 	int i;
-	int j;
+	int	j;
+	int end_line;
+	int nb_line;
+	int	square;
 
 	i = 1;
+	square = 0;
 	j = 1;
+	end_line = 1;
+	nb_line = 1;
 	while (str[i])
 	{
-		if (ft_mult_5(i) == 1 && ft_mult_5(j) != 1 && str[i] != '\n')
+		if (ft_mult_5(nb_line) == 1 && str[i] != '\n')
 			return (1);
-		if (ft_mult_5(i) == 1)
-			j++;
+		if (ft_mult_5(nb_line) == 1)
+			j--;
+		if (str[i] == '\n')
+			nb_line++;
+		j++;
 		if (ft_mult_5(j) == 1 && str[i] != '\n')
 			return (1);
 		i++;
+		square++;
+		if (ft_mult_5(nb_line) == 1 && str[i + 1] != '\0')
+			square = 0;
 	}
+	if (square != 21)
+		return (1);
 	return (i);
 }
 
@@ -54,12 +70,14 @@ static int		ft_check_char(char *str)
 	return (0);
 }
 
-int     		ft_check_main(char *str)
+int				ft_check_main(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	i = ft_check_char(str);
 	i = ft_check_back_line(str);
+	if (i != 1)
+		return (0);
 	return (i);
 }

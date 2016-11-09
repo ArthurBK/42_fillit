@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gepicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 13:55:30 by gepicard          #+#    #+#             */
-/*   Updated: 2016/11/07 13:10:49 by gepicard         ###   ########.fr       */
+/*   Created: 2016/11/05 16:23:33 by abonneca          #+#    #+#             */
+/*   Updated: 2016/11/09 16:38:52 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <string.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <stdio.h>
 # include <stdlib.h>
 
 typedef struct	s_list

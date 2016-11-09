@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:41:27 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 13:59:02 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/09 16:36:56 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,24 @@ char	*ft_string_to_fd(char *dst, int fd)
 	return (dst);
 }
 
+void	ft_print_tab(char **tab)
+{
+	int i;
+
+	i = 0;
+	while (tab[i])
+	{
+		ft_putstr(tab[i]);
+		i++;
+	}
+}
+
 int	main(int ac, char **ar)
 {
 	int		fd;
 	char	*dst;
 	int		len;
+	char	**tab;
 
 	fd = 0;
 	len = 0;
@@ -71,6 +84,8 @@ int	main(int ac, char **ar)
 		if (!(dst = malloc(sizeof(char) * len + 1)))
 			return (1);
 		dst = ft_string_to_fd(dst, fd);
+		tab = ft_strsplit(dst, '\n');
+		ft_print_tab(tab);
 		ft_check_main(dst);
 		printf("%i\n", ft_check_pattern(dst));
 	}
