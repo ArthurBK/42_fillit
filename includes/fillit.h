@@ -6,18 +6,33 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 17:38:40 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 09:14:10 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/09 14:58:25 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
 # define FILLIT_H
+# include <stdio.h>
 
-typedef struct	s_tetri
+typedef	struct	s_coordxy
 {
-	char	*pattern;
-	int		offset;
-}				t_tetri
+	int	x;
+	int	y;
+}				t_coordxy;
+
+typedef	struct	s_coord
+{
+	t_coordxy	coord_1;
+	t_coordxy	coord_2;
+	t_coordxy	coord_3;
+	t_coordxy	coord_4;
+}				t_coord;
+
+typedef struct	s_piece
+{
+	struct s_coord	*coord;
+	struct s_piece	*next;
+}				t_piece;
 
 { 
 ##..##.........., 2
