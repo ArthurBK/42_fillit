@@ -6,18 +6,24 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 09:14:03 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 10:02:33 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/09 13:29:58 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+#include "libft.h"
 #include <stdio.h>
 
+/*
 const t_tetri  g_tetri[19] = {
 
-	{"##..##..........", 2 },
+	{"
+##..
+##..
+....
+....", 2 },
 	{"####............", 0 },
-	{"#...#...#...#...", 4 },
+	{"#...#...#...#...", 3 },
 	{".##.##..........", 1 },
 	{"#...##...#......", 2 },
 	{"##...##.........", 1 },
@@ -35,21 +41,31 @@ const t_tetri  g_tetri[19] = {
 	{"##...#...#......", 2 },
 	{"..#.###.........", 1 }
 };
-
-void	ft_check_pattern(char *str)
+*/
+int	ft_check_pattern(char *str)
 {
-
-	int i ;
+	char **pieces;
+	int i;
+	int j;
+	
 	i = 0;
-	while( i < 20)
+	pieces = ft_strsplit(str, '\n');
+	while (pieces[i])
 	{
-		if (str[i] == '\n')
-			i++;
-		while (i < NUMBER_OF_PATTERNS)	
-		{
-			printf("%s\n", g_tetri[i].pattern);
-			i++;
-		}
-		i++;
+		j = 0;
+//		while (i < NUMBER_OF_PATTERNS)
+//		if (ft_strequ(g_tetri[i].pattern, )
+			printf("%s\n", pieces[i++]);
+			printf("i: %i\n", i);
+//	}
+//	while( i < 20)
+//	{
+//		if (str[i] == '\n')
+//			i++;
+//		{
+//		printf("%s\n", g_tetri[i].pattern);
+//			i++;
+//		}
 	}
+	return (0);
 }

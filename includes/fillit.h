@@ -6,7 +6,7 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 17:38:40 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 09:56:24 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/09 13:26:14 by abonneca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ typedef struct	s_tetri
 	int		offset;
 }				t_tetri;
 
-void    ft_check_pattern(char *str);
+int    ft_check_pattern(char *str);
 
 #endif
