@@ -6,7 +6,7 @@
 #    By: abonneca <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 09:59:58 by abonneca          #+#    #+#              #
-#    Updated: 2016/11/09 19:07:32 by abonneca         ###   ########.fr        #
+#    Updated: 2016/11/12 09:41:52 by gepicard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,10 @@ SRC=	main.c\
 		ft_check.c\
 		ft_pattern.c\
 		ft_coord.c\
+		ft_store.c\
+		ft_store2.c\
+		ft_solve.c\
+		ft_solve2.c\
 
 OBJ=$(SRC:.c=.o)
 

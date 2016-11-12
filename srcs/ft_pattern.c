@@ -6,13 +6,12 @@
 /*   By: abonneca <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 09:14:03 by abonneca          #+#    #+#             */
-/*   Updated: 2016/11/09 16:37:15 by gepicard         ###   ########.fr       */
+/*   Updated: 2016/11/12 09:44:43 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
 #include "libft.h"
-#include <stdio.h>
 
 int			ft_check_valid_tet(int *i, int j, int k, char **pieces)
 {
@@ -65,7 +64,7 @@ int			ft_check_pattern(char *str)
 			j++;
 		}
 		if (valid != 4)
-			return (-1);
+			return (1);
 	}
-	return (1);
+	return (0);
 }

@@ -6,11 +6,12 @@
 /*   By: gepicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 09:23:56 by gepicard          #+#    #+#             */
-/*   Updated: 2016/11/09 14:37:40 by gepicard         ###   ########.fr       */
+/*   Updated: 2016/11/12 10:00:57 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "fillit.h"
 
 static int		ft_mult_5(int i)
 {
@@ -25,14 +26,12 @@ static int		ft_check_back_line(char *str)
 {
 	int i;
 	int	j;
-	int end_line;
 	int nb_line;
 	int	square;
 
 	i = 1;
 	square = 0;
 	j = 1;
-	end_line = 1;
 	nb_line = 1;
 	while (str[i])
 	{
@@ -45,14 +44,12 @@ static int		ft_check_back_line(char *str)
 		j++;
 		if (ft_mult_5(j) == 1 && str[i] != '\n')
 			return (1);
-		i++;
 		square++;
 		if (ft_mult_5(nb_line) == 1 && str[i + 1] != '\0')
 			square = 0;
+		i++;
 	}
-	if (square != 21)
-		return (1);
-	return (i);
+	return (square != 21 ? 1 : 0);
 }
 
 static int		ft_check_char(char *str)
@@ -73,11 +70,14 @@ static int		ft_check_char(char *str)
 int				ft_check_main(char *str)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	i = ft_check_char(str);
 	i = ft_check_back_line(str);
-	if (i != 1)
-		return (0);
-	return (i);
+	if (i == 1)
+		return (1);
+	j = ft_check_pattern(str);
+	return (i + j);
 }

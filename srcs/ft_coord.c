@@ -6,84 +6,65 @@
 /*   By: gepicard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 13:28:38 by gepicard          #+#    #+#             */
-/*   Updated: 2016/11/09 19:41:05 by abonneca         ###   ########.fr       */
+/*   Updated: 2016/11/11 19:15:11 by gepicard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "../includes/fillit.h"
 
-/*
-   static int		ft_mult_4(int i)
-   {
-   if (i == 1)
-   return (0);
-   if (i / 4 * 4 == i)
-   return (1);
-   return (0);
-   }
-   */
-
-/*
-   static int		ft_nb_piece(char *str)
-   {
-   return (ft_strlen(str) / 16);
-   }
-   */
-
-
-
-t_piece			**ft_piece_to_coord(char **tab)
+char	*ft_str_without_back_slash(char *str)
 {
-	int			i;
-	int			j;
-	int			k;
-	int			p;
-	int			x;
-	int			y;
-	int			count;
-	t_coordxy	*coord;
-	t_piece		**piece;
+	int		i;
+	int		j;
+	char	*dst;
 
+	i = -1;
 	j = 0;
-	count = 0;
-	p = 0;
-	piece = (t_piece **)malloc(sizeof(t_piece));
-	coord = (t_coordxy *)malloc(sizeof(t_coordxy));
-	while (tab[j])
+	while (str[++i])
 	{
-		x = 0;
-		y = 0;
-		k = -1;
-//		*piece = ft_lstnew(..)
-		while (++k <= 3)
+		if (str[i] != '\n')
+			j++;
+	}
+	if (!(dst = (char*)malloc(sizeof(char) * j + 1)))
+		return (NULL);
+	i = -1;
+	j = 0;
+	while (str[++i])
+	{
+		if (str[i] != '\n')
 		{
-			i = 0;
-			while (tab[j][i])
-			{
-				if (tab[j][i] == '#')
-				{
-					if (k != 3 && i > 0)
-						if (tab[j + 1][i - 1] == '#')
-							x++;
-					coord->x = x;
-					coord->y = y;
-					ft_lstadd(&coord, ft_lstnew(&coord, sizeof(coord)));
-					p++;
-				}
-				i++;
-				x++;
-			}
-			y++;
+			dst[j] = str[i];
 			j++;
 		}
-		count++;
 	}
-	return (piece);
+	dst[j] = '\0';
+	return (dst);
 }
-/*
+
+int		ft_nb_piece(char *str)
 {
-if (!(coordxy = (t_coordxy*)malloc(sizeof(t_coordxy))))
-	return (NULL);
+	return (strlen(str) / 16 == 1 ? 1 : strlen(str) / 16);
 }
-*/
+
+char	**ft_str_to_tab(char *str)
+{
+	char	**tab;
+	int		i;
+	int		k;
+	int		j;
+
+	i = -1;
+	k = 0;
+	j = 0;
+	if (!(tab = (char **)malloc(sizeof(char *) * ft_nb_piece(str) + 1)))
+		return (NULL);
+	while (i++ < ft_nb_piece(str) - 1)
+	{
+		k += 16;
+		tab[i] = ft_strsub(str, j, k - j);
+		j += 16;
+	}
+	tab[i] = 0;
+	return (tab);
+}
